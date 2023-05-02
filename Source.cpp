@@ -98,7 +98,7 @@ int main()
 			break;
 		default:
 		{
-			cout << "Выберете номер действия который есть в меню" << endl;
+			cout << "Select the action number that is in the menu" << endl;
 		}
 		}
 	}
@@ -106,23 +106,23 @@ int main()
 
 void Menu()
 {
-	cout << "\t Меню" << endl;
-	cout << "1) Добавить элемент в начло списка" << endl;
-	cout << "2) Добавить элемент в конец списка" << endl;
-	cout << "3) Удалить К элементов из начала списка" << endl;
-	cout << "4) Удалить К элементов из конца списка" << endl;
-	cout << "5) Добавить К элементов с введёного номера" << endl;
-	cout << "6) Удолить К элементов с введёного номера" << endl;
-	cout << "7) Вывести список на экран" << endl;
-	cout << "8) Очистить список" << endl;
-	cout << "9) Законьчить работу со списком" << endl;
+	cout << "\t Menu" << endl;
+	cout << "1) Add an item to the top of the list" << endl;
+	cout << "2) Add an item to the end of the list" << endl;
+	cout << "3) Remove K items from the beginning of the list" << endl;
+	cout << "4) Remove K items from the end of the list" << endl;
+	cout << "5) Add to the elements from the entered number" << endl;
+	cout << "6) Delete K elements from the entered number" << endl;
+	cout << "7) Display the list on the screen" << endl;
+	cout << "8) Clear the list" << endl;
+	cout << "9) Finish working with the list" << endl;
 }
 
 void push_front(List* list)
 {
 	list->size++;
 	Node* node = new Node;
-	cout << "Введите данные" << endl;
+	cout << "Enter the data" << endl;
 	getline(cin >> ws, node->a);
 	if (Chek(list))
 	{
@@ -140,7 +140,7 @@ void del_front(List* list)
 {
 	int i, i1;
 	CoutList(list);
-	cout << "Введите сколько нужно удолить элементов из начала списка" << endl;
+	cout << "Enter how many items to remove from the beginning of the list" << endl;
 	cin >> i;
 	i1 = i;
 	if (Chek(list))
@@ -156,17 +156,17 @@ void del_front(List* list)
 				i--;
 			}
 			list->size = list->size - i1;
-			cout << "Элементы удолен" << endl;
+			cout << "Elements removed" << endl;
 		}
 		else
 		{
-			cout << "В списке количество элементов меньше или равно, количеству элементов которые надо удолить, поэтому удоляется весь список." << endl;
+			cout << "In the list, the number of items is less than or equal to the number of items to be deleted, so the entire list is deleted." << endl;
 			DelList(list);
 		}
 	}
 	else
 	{
-		cout << "Список пуст" << endl;
+		cout << "The list is empty" << endl;
 	}
 }
 
@@ -174,7 +174,7 @@ void push_buck(List* list)
 {
 	list->size++;
 	Node* node = new Node;
-	cout << "Введите данные" << endl;
+	cout << "Enter the data" << endl;
 	getline(cin >> ws, node->a);
 	if (Chek(list))
 	{
@@ -192,7 +192,7 @@ void del_buck(List* list)
 {
 	int i, i1;
 	CoutList(list);
-	cout << "Введите сколько элементов нужно удолить с конца списка" << endl;
+	cout << "Enter how many items to remove from the end of the list" << endl;
 	cin >> i;
 	i1 = i;
 	if (Chek(list))
@@ -208,17 +208,17 @@ void del_buck(List* list)
 				i--;
 			}
 			list->size = list->size - i1;
-			cout << "Элементы удалены" << endl;
+			cout << "Elements removed" << endl;
 		}
 		else
 		{
-			cout << "В списке количество элементов меньше или равно, количеству элементов которые надо удолить, поэтому удоляется весь список." << endl;
+			cout << "In the list, the number of items is less than or equal to the number of items to be deleted, so the entire list is deleted." << endl;
 			DelList(list);
 		}
 	}
 	else
 	{
-		cout << "Список пуст" << endl;
+		cout << "The list is empty" << endl;
 	}
 }
 
@@ -227,9 +227,9 @@ void PushK(List* list)
 	int n, i, i1;
 	int k;
 	CoutList(list);
-	cout << "Введите элемент с которого начнётся добавление элементов начать добавление" << endl;
+	cout << "Enter the element from which to start adding elements to start adding" << endl;
 	cin >> n;
-	cout << "Введите количество вводимых элементов" << endl;
+	cout << "Enter the number of items to be entered" << endl;
 	cin >> i;
 	i1 = i;
 	if (Chek(list))
@@ -272,7 +272,7 @@ void PushK(List* list)
 				while (i > 0)
 				{
 					Node* node = new Node;
-					cout << "Введите данные" << endl;
+					cout << "Enter the data" << endl;
 					getline(cin >> ws, node->a);
 					temp1 = temp->next;
 					node->next = temp1;
@@ -287,12 +287,12 @@ void PushK(List* list)
 		}
 		else
 		{
-			cout << "Такого элемента нет в списке" << endl;
+			cout << "There is no such item in the list" << endl;
 		}
 	}
 	else
 	{
-		cout << "Списко пуст" << endl;
+		cout << "The list is empty" << endl;
 	}
 }
 void DelK(List*list)
@@ -300,9 +300,9 @@ void DelK(List*list)
 	int n, i, i1;
 	int k;
 	CoutList(list);
-	cout << "Введите элемент с которого начнётся удоление элементов" << endl;
+	cout << "Enter the element from which the removal of elements will begin" << endl;
 	cin >> n;
-	cout << "Введите количество удоляемых элементов" << endl;
+	cout << "Enter the number of items to delete" << endl;
 	cin >> i;
 	i1 = i;
 	if (Chek(list))
@@ -327,7 +327,7 @@ void DelK(List*list)
 					delete temp1;
 					i--;
 				}
-				cout << "В списке количество элементов меньше или равно, количеству элементов которые надо удолить, поэтому удоляется весь список." << endl;
+				cout << "In the list, the number of items is less than or equal to the number of items to be deleted, so the entire list is deleted." << endl;
 				list->size = list->size - i1;
 			}
 			else
@@ -348,18 +348,18 @@ void DelK(List*list)
 					delete temp1;
 					i--;
 				}
-				cout << "Элементы удолены" << endl;
+				cout << "Elements removed" << endl;
 				list->size = list->size - i1;
 			}
 		}
 		else
 		{
-			cout << "Такого элемента нет в списке" << endl;
+			cout << "There is no such item in the list" << endl;
 		}
 	}
 	else
 	{
-		cout <<"Списко пуст" << endl;
+		cout <<"The list is empty" << endl;
 	}
 }
 
@@ -373,7 +373,7 @@ void DelList(List* list)
 		temp->prev = nullptr;
 		delete temp1;
 	}
-	cout << "Список удалён" << endl;
+	cout << "The list has been deleted" << endl;
 	list->size = 0;
 }
 bool Chek(List* list)
